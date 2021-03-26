@@ -4,10 +4,9 @@
 ## Factory
 
 The Fastify module exports a factory function that is used to create new
-<a href="./Server.md"><code><b>Fastify server</b></code></a>
-instances. This factory function accepts an options object which is used to
-customize the resulting instance. This document describes the properties
-available in that options object.
+<code><b>Fastify server</b></code> instances. This factory function accepts
+an options object which is used to customize the resulting instance. This
+document describes the properties available in that options object.
 
 <a name="factory-http2"></a>
 ### `http2`
@@ -192,7 +191,7 @@ fastify.addHook('onResponse', (req, reply, done) => {
 })
 ```
 
-Please note that this setting will also disable an error log written by the the default `onResponse` hook on reply callback errors.
+Please note that this setting will also disable an error log written by the default `onResponse` hook on reply callback errors.
 
 <a name="custom-http-server"></a>
 ### `serverFactory`
@@ -986,7 +985,7 @@ fastify.ready(() => {
 <a name="addContentTypeParser"></a>
 #### addContentTypeParser
 
-`fastify.addContentTypeParser(content-type, options, parser)` is used to pass custom parser for a given content type. Useful for adding parsers for custom content types, e.g. `text/json, application/vnd.oasis.opendocument.text`. `content-type` can be a string or string array.
+`fastify.addContentTypeParser(content-type, options, parser)` is used to pass custom parser for a given content type. Useful for adding parsers for custom content types, e.g. `text/json, application/vnd.oasis.opendocument.text`. `content-type` can be a string, string array or RegExp.
 
 ```js
 // The two arguments passed to getDefaultJsonParser are for ProtoType poisoning and Constructor Poisoning configuration respectively. The possible values are 'ignore', 'remove', 'error'. ignore  skips all validations and it is similar to calling JSON.parse() directly. See the <a href="https://github.com/fastify/secure-json-parse#api">`secure-json-parse` documentation</a> for more information.
